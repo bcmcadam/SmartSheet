@@ -25,7 +25,7 @@ public class SmartSheetPage extends BasePage {
 
     private List<String> expectedColumnsAfterDeletion = Arrays.asList( "Column1", "Column2", "Column3", "Column4",
             "Column5", "Column6");
-    private List<String> expectedAfterAdditions = Arrays.asList("New Column Left", "Column1", "New Column Right",
+    private List<String> expectedColumnsAfterAdditions = Arrays.asList("New Column Left", "Column1", "New Column Right",
             "Column2", "Column3", "Column4", "Column5", "Column6");
     //Lists of expected Column name values to assert against at the end of the test
 
@@ -97,7 +97,7 @@ public class SmartSheetPage extends BasePage {
                 (columnsLocator));
         //grabs updated columns
 
-        Assertions.assertEquals(expectedAfterAdditions, getColumnNames(updatedColumns));
+        Assertions.assertEquals(expectedColumnsAfterAdditions, getColumnNames(updatedColumns));
         //Asserts that updated columns match our expectations after columms have been added.
 
         deleteAddedColumns();
