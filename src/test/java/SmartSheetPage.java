@@ -88,7 +88,7 @@ public class SmartSheetPage extends BasePage {
         // after the first column is deleted
     }
 
-    public void validateAddingColumn() {
+    public void validateAddingAndDeletingColumn() {
         addColumn("Right");
         addColumn("Left");
         //adds columns to the left and right of the first column

@@ -1,14 +1,8 @@
-import static org.junit.jupiter.api.Assertions.*;
-
-import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-
-import java.net.URL;
 
 public class AddDeleteColumnsTest {
     private  WebDriver driver;
@@ -22,10 +16,10 @@ public class AddDeleteColumnsTest {
     }
 
     @Test
-    public void test_add_sheet() {
+    public void test_add_delete_columns() {
         new LoginPage(driver).logIn();
         new SmartSheetPage(driver)
-                .validateAddingColumn();
+                .validateAddingAndDeletingColumn();
     }
 
     @AfterEach
