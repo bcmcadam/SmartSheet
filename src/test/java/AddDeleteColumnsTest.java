@@ -17,12 +17,15 @@ public class AddDeleteColumnsTest {
     public void setup() {
         System.setProperty("webdriver.chrome.driver", "chromedriver");
         driver = new ChromeDriver();
+        driver.manage().window().maximize();
         driver.navigate().to("https://app.smartsheet.com/sheets/W6wM8jf5qMf8FQ6XR6M8HwvhF5QcH3pQpXmMxWC1?view=grid");
     }
+
     @Test
-    public void test_Homepage() {
-        new HomePage(driver)
-                .validateLogoIsPresent();
+    public void test_add_sheet() {
+        new LoginPage(driver).logIn();
+        new SmartSheetPage(driver)
+                .validateAddingColumn();
     }
 
     @AfterEach
